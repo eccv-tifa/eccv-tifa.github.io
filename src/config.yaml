@@ -1,6 +1,6 @@
 site:
-  name: ICML-TiFA Workshop
-  site: 'https://icml-tifa.github.io'
+  name: ECCV-TiFA Workshop
+  site: 'https://ECCV-TiFA.github.io'
   base: '/'
   trailingSlash: false
 
@@ -9,14 +9,14 @@ site:
 # Default SEO metadata
 metadata:
   title:
-    default: ICML-TiFA Workshop
-    template: '%s — ICML-TiFA Workshop'
+    default: ECCV-TiFA Workshop
+    template: '%s — ECCV-TiFA Workshop'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: ICML-TiFA Workshop
+    site_name: ECCV-TiFA Workshop
     images:
       - url: '~/assets/images/default.png'
         width: 1200
