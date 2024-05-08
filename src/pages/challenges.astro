@@ -1,0 +1,132 @@
+---
+import Header from '~/components/widgets/Header.astro';
+import Hero2 from '~/components/widgets/Hero2.astro';
+import Content from '~/components/widgets/Content.astro';
+// import Timeline from '~/components/ui/Timeline.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+// import Brands from '~/components/widgets/Brands.astro';
+// import Timezone from '~/components/widgets/Timezone.astro';
+import Layout from '~/layouts/PageLayout.astro';
+import Testimonials from '~/components/widgets/Testimonials.astro';
+import Track2 from '~/components/widgets/Track2.astro';
+import Track3 from '~/components/widgets/Track3.astro';
+import Track1 from '~/components/widgets/Track1.astro';
+import { getPermalink } from '~/utils/permalinks';
+// import Sponsor from '~/components/widgets/Sponsor.astro';
+
+const metadata = {
+  title: 'Challenges',
+};
+
+const headerData = {
+  links: [
+    {
+      text: 'Overview',
+      href: getPermalink('/challenges#Overview'),
+    },
+    {
+      text: 'Track1',
+      href: getPermalink('/challenges#TRACK1'),
+    },
+    {
+      text: 'Track2',
+      href: getPermalink('/challenges#TRACK2'),
+    },
+    {
+      text: 'Track3',
+      href: getPermalink('/challenges#TRACK3'),
+    },
+    {
+      text: 'Home',
+      href: getPermalink('/'),
+    },
+  ],
+};
+---
+
+<Layout metadata={metadata}>
+  <Fragment slot="header">
+    <Header {...headerData} isSticky />
+  </Fragment>
+
+  <!-- Hero2 Widget ******************* -->
+
+  <Hero2
+    tagline="ECCV 2024 Workshop"
+    actions={[{ variant: 'primary', text: 'Get Started', href: 'https://ECCV.cc/virtual/2024/workshop/29951' }]}
+  >
+    <Fragment slot="title">Multi-modal Foundation Model meets Embodied AI Challenges</Fragment>
+  </Hero2>
+
+  <!-- Content Widget **************** -->
+
+  <Content id="Overview" classes={{ container: 'pb-0 md:pb-0 lg:pb-0' }}>
+    <Fragment slot="title"> Overview </Fragment><Fragment slot="subtitle"
+      >Welcome to the ECCV 2024 Workshop on Multi-modal Foundation Model meets Embodied AI
+    </Fragment>
+  </Content>
+
+  <Testimonials
+    classes={{ container: 'py-0 md:py-0 lg:py-0 ' }}
+    testimonials={[
+      {
+        title: 'Track 1',
+        name: 'EgoPlan Challenge',
+        image: {
+          src: '/challenge1.png',
+          alt: 'challenge1 Image',
+        },
+        link: '#TRACK1',
+        job: 'The EgoPlan Challenge aims to evaluate the potential of Multimodal Large Language Models (MLLMs) as embodied task planners in real-world scenarios. In this challenge, MLLMs are required to predict the next feasible action given a real-time task progress video, current visual observation, and an open-form language instruction as inputs. Sourced from egocentric videos of everyday household activities, the EgoPlan Challenge features realistic tasks, diverse actions, and complex real-world visual observations. ',
+      },
+      {
+        title: 'Track 2',
+        name: 'Composable Generalization Agent Challenge',
+        image: {
+          src: '/challenge2.png',
+          alt: 'challenge2 Image',
+        },
+        link: '#TRACK2',
+        job: 'The Composable Generalization Challenge focuses on exploring the capabilities of visual language models (VLMs) for high-level planning in embodied tasks that involve robotic manipulation. Through endowing the embodied agents with the ability to break down novel physical skills like “wipe”, “throw” and “receive” into constituent primitive skills, mitigating the unpredictability and intricacy when expanding the abilities of agents to novel physical skills. The challenge includes a variety of complex tasks, and each demonstration episode is clipped by the  meticulously-designed primitive skills.',
+      },
+      {
+        title: 'Track 3',
+        name: 'World Model Challenge',
+        image: {
+          src: '/challenge3.png',
+          alt: 'challenge3 Image',
+        },
+        link: '#TRACK3',
+        job: 'The World Model Challenge aims to evaluate the potential of World Simulator as embodied task planners and sequential decision makers in real-world scenarios. In this challenge, World Simulators are required to generate a video of an embodied scene based on the given open-form language instructions and the available history image observation frames. The task scenarios come from different embodied tasks such as robotic arms, automatic driving, etc. The generated video will be thoroughly evaluated through special embodied intelligence metrics, including physical rules and motion trajectories, to verify the embodied capabilities of the video.',
+      },
+    ]}
+  />
+  <Track1 title="EgoPlan Challenge" tagline="Track 1" id="TRACK1" />
+  <Track2 title="Composable Generalization Agent Challenge" tagline="Track 2" id="TRACK2" />
+  <Track3 title="World Model Challenge" tagline="Track 3" id="TRACK3" />
+  <FAQs
+    title="Frequently Asked Questions"
+    items={[
+      {
+        title: 'Can we submit a paper that will also be submitted to NeurIPS 2024?',
+        description: 'Yes.',
+        icon: 'tabler:help-octagon',
+      },
+      {
+        title: 'Can we submit a paper that was accepted at ICLR 2024?',
+        description: 'No. ECCV prohibits main conference publication from appearing concurrently at the workshops.',
+        icon: 'tabler:help-octagon',
+      },
+      {
+        title: 'Will the reviews be made available to authors?',
+        description: 'Yes.',
+        icon: 'tabler:help-octagon',
+      },
+      {
+        title: 'I have a question not addressed here, whom should I contact?',
+        description: 'Email organizers at ECCV-tifa-workshop@googlegroups.com',
+        icon: 'tabler:help-octagon',
+      },
+    ]}
+  />
+</Layout>

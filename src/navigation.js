@@ -1,4 +1,4 @@
-import { getPermalink, getAsset } from './utils/permalinks';
+import { getPermalink } from './utils/permalinks';
 
 export const headerData = {
   links: [
@@ -7,23 +7,15 @@ export const headerData = {
       href: getPermalink('/#Overview'),
     },
     {
-      text: 'Call For Papers',
+      text: 'Call for Papers',
       href: getPermalink('/#Call-For-Papers'),
     },
+    // {
+    //   text: 'Challenges',
+    //   href: getPermalink('/#Challenges'),
+    // },
     {
-      text: 'Schedule',
-      href: getPermalink('/#Schedule'),
-    },
-    {
-      text: 'Speakers',
-      href: getPermalink('/#Speakers'),
-    },
-    {
-      text: 'Challenges',
-      href: getPermalink('/#Challenges'),
-    },
-    {
-      text: 'Organizers',
+      text: 'Organizing Committee',
       href: getPermalink('/#Organizers'),
     },
     {
@@ -36,14 +28,11 @@ export const headerData = {
 export const footerData = {
   links: [],
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    // { text: 'Terms', href: getPermalink('/terms') },
+    // { text: 'Privacy Policy', href: getPermalink('/privacy') },
   ],
   socialLinks: [
-    { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
-    { ariaLabel: 'Instagram', icon: 'tabler:brand-instagram', href: '#' },
-    { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: '#' },
-    { ariaLabel: 'RSS', icon: 'tabler:rss', href: getAsset('/rss.xml') },
-    { ariaLabel: 'Github', icon: 'tabler:brand-github', href: 'https://github.com/onwidget/astrowind' },
+    // { ariaLabel: 'X', icon: 'tabler:brand-x', href: '#' },
+    // { ariaLabel: 'Github', icon: 'tabler:brand-github', href: '#' },
   ],
 };

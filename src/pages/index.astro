@@ -6,12 +6,13 @@ import Content from '~/components/widgets/Content.astro';
 import { headerData } from '~/navigation';
 import FAQs from '~/components/widgets/FAQs.astro';
 import Brands from '~/components/widgets/Brands.astro';
-import Timezone from '~/components/widgets/Timezone.astro';
+// import Timezone from '~/components/widgets/Timezone.astro';
 import Layout from '~/layouts/PageLayout.astro';
-import Sponsor from '~/components/widgets/Sponsor.astro';
+// import Testimonials from '~/components/widgets/Testimonials.astro';
+import Button from '~/components/ui/Button.astro';
 
 const metadata = {
-  title: 'Home',
+  title: 'ICML MFM-EAI WorkShop',
 };
 ---
 
@@ -22,16 +23,13 @@ const metadata = {
 
   <!-- Hero2 Widget ******************* -->
 
-  <Hero2 tagline="ECCV 2024 Workshop" actions={[{ variant: 'primary', text: 'Get Started', href: '#Overview' }]}>
-    <Fragment slot="title"> Trustworthy in Multi-modal Foundation Models and AI Agents </Fragment>
+  <Hero2 tagline="ICML 2024 Workshop" actions={[{ variant: 'primary', text: 'Get Started', href: '#Overview' }]}>
+    <Fragment slot="title"> Multi-modal Foundation Model meets Embodied AI </Fragment>
 
     <Fragment slot="subtitle">
-      <span class="hidden sm:inline">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. <span class="font-semibold">corporis</span>consequuntur
-        nihil vitae voluptate</span
-      >
-      Quas natus laborum neque nemo quasi aliquam similique sint, veritatis expedita optio ex , voluptatem consequatur soluta
-      enim!
+      The Forty-first International Conference on Machine Learning<br /><span class="text-slate-500"
+        >@ Messe Wien Exhibition Congress Center, Vienna
+      </span><br /><span class="text-slate-300">Fri 26 Jul</span>
     </Fragment>
   </Hero2>
 
@@ -39,27 +37,56 @@ const metadata = {
 
   <Content id="Overview">
     <Fragment slot="title"> Overview </Fragment><Fragment slot="subtitle"
-      >Welcome to the ECCV 2024 Workshop on Trustworthy in Multi-modal Foundation Models and AI Agents (TiFA)
+      >Welcome to the ICML 2024 Workshop on Multi-modal Foundation Model meets Embodied AI(MFM-EAI)
     </Fragment>
     <Fragment slot="content"
       ><div class="mb-4">
-        Multi-modal Foundation Models (MFMs) have witnessed significant advancements in various bench marks and
-        practical applications. They are proficient in a wide range of tasks, and capable of pro ducing varied
-        multimodal responses. Nowadays a couple of MFMs have been deployed as realistic applications (such as GPT-4 [18]
-        and Midjourney [25]). Meanwhile, a large variety of MFMs (like InternLM [24] and LLaVA [14]) are still under
-        further research. Furthermore, foundation models with their powerful reasoning capabilities have led to the
-        emergence of various AI Agents [19, 28]. These agents are often capable of understanding open-world
-        instructions, breaking down complex tasks, and taking steps to achieve their goals.
+        In recent years, Multi-modal Foundation Models (MFM) such as CLIP (20), ImageBind (13), DALL·E 3 (3), GPT- 4V
+        (18), Gemini (22), and Sora (5), have emerged as one of the most captivating and rapidly advancing areas in AI,
+        drawing significant attention and progressing swiftly. The open-source community for MFM has also seen vigorous
+        growth, with the emergence of models and algorithms like LLaVA (17), <a
+          href="https://openlamm.github.io/"
+          class="hover:underline text-sky-600 font-medium"
+          target="_blank">LAMM</a
+        > (26), MiniGPT-4 (28), Stable Diffusion (21), and OpenSora (14). These MFMs are now actively exploring ultimate
+        application scenarios beyond traditional computer vision and natural language processing tasks. Simultaneously bolstered
+        by MFM, Embodied Artificial Intelligence (EAI) agents have achieved considerable progress in addressing complex tasks
+        in both simulators and real-world environments. However, at the intersection of these fields, a multitude of open
+        questions and unexplored territories remain, including long-horizon decision-making, motion planning with specific
+        trajectories, adapting to new environments, and more. This workshop is dedicated to exploring several critical challenges,
+        including but not limited to:
       </div>
       <div class="mb-4">
-        Advanced MFMs and AI Agents, equipped with diverse modalities and an increasing number of available affordances,
-        accelerate their potential impact on society. As these systems gain abili ties to alter societal dynamics
-        swiftly, understanding and preempting the vulnerabilities of such systems and their induced harms becomes
-        crucial. Trustworthiness in MLMs and AI Agents tran scends identifying vulnerabilities in models and emphasizes
-        the importance of proactive harm mit igation, safeguards, and the establishment of comprehensive safety
-        mechanisms throughout the lifecycle of system development and deployment. This approach demands a blend of
-        technical and socio-technical strategies, incorporating AI governance and regulatory insights to build
-        trustworthy MFMs and Agents.
+        <span class="font-bold">Generalist capability of MFM:</span> Recent studies have revealed that the prominent perceptual
+        and reasoning abilities of multi-modal large language models (MLLMs) can enhance embodied agents' decision-making
+        (19). Furthermore, the massive knowledge acquired from pre-training and the ability to decompose tasks can make it
+        easier for embodied agents to generalize to new environments and tasks(6). We encourage studies to explore these
+        crucial capabilities of MFMs that can contribute to significant performance gains for embodied agents. Tentative
+        research questions: what potential capabilities do MFM possess that can empower embodied agents, and how can these
+        capabilities be further improved and evaluated?
+      </div><div class="mb-4">
+        <span class="font-bold">Multi-modal foundation model for embodied agents:</span> The generalist abilities and extensive
+        knowledge of MFMs can potentially address complex, long-horizon, and open-ended EAI tasks that elude traditional
+        methods. We welcome research that leverages MFMs to guide high-level perception and planning (8), assist with low-level
+        control and execution (27), or directly control physical entities on an end-to-end basis (4). We also encourage the
+        exploration of innovative applications of MFMs and novel framework designs for embodied agents. Tentative research
+        questions: what constitutes an effective system architecture for MFM-based embodied agents, and how can MFM augment
+        the perceptual and decision-making capabilities?
+      </div><div class="mb-4">
+        <span class="font-bold">Generative models as world simulators:</span> Simulators for EAI scenarios need to perform
+        high-fidelity simulations of physical laws in the real world, such as parallax, visual contrast, and linear perspective,
+        both visually and in terms of interaction feedback. Recent works like Sora have preliminarily shown that, in specific
+        scenarios, effective simulation is feasible, making it increasingly possible to simulate the real world based on
+        controllably generated content. Tentative research questions: Can generative models be used as physics-aware world
+        models, and what benchmarks or evaluation criteria should be developed to assess the fidelity of these simulations?
+      </div><div class="mb-4">
+        <span class="font-bold">Data collection for imitation learning:</span> The accumulation of diverse and large-scale
+        demonstrations is essential for improving the adaptability and proficiency of robot imitation learning (IL). When
+        MFM is introduced to construct embodied agents, the existing data within the field of robotics becomes even more
+        insufficient. We welcome studies that gather a rich and varied dataset for IL (10) or collect in-the-wild data cost-effectively
+        and design policy to learn from it (11). Tentative research questions: How to efficiently collect demonstrations
+        for IL besides teleoperation, and how to efficiently use the collected demonstrations (especially how to bridge gaps
+        in different domains).
       </div>
     </Fragment>
     <Fragment slot="bg">
@@ -68,30 +95,133 @@ const metadata = {
   </Content>
 
   <Content id="Call-For-Papers">
-    <Fragment slot="title"> Call For Papers </Fragment>
+    <Fragment slot="title"> Call for Papers </Fragment>
     <Fragment slot="content"
-      ><div class="mb-2">
-        Our goals are threefold: 1) Highlight novel directions in trustworthy MFM and AI Agent research; 2) Promote
-        interdisciplinary collaboration on trustworthy MFM and AI Agents, for example among i) trustworthy ML research
-        in vision, language, and other modalities; ii) technical and governance communities; 3) Initiate discussions on
-        best practices for responsible training, deployment, transparency, and security of MFM and AI Agents.
+      >This workshop is designed to unite researchers and practitioners from MFM and EAI, providing a platform to
+      discuss the most recent advancements, methodologies, and practical applications. By encouraging collaboration
+      between these two domains, we aim to create new opportunities to tackle complex challenges at the intersection of
+      both fields. We invite submissions on the following topics:
+      <li class="ml-4">Training and evaluation of MFM in open-ended scenarios (17; 26)</li>
+      <li class="ml-4">Data collection for training embodied Agents (7; 10; 12; 6)</li>
+      <li class="ml-4">Framework designs for MFM-powered embodied agents (23; 19)</li>
+      <li class="ml-4">Perception and high-level planning in embodied agents empowered by MFM (9; 1; 15)</li>
+      <li class="ml-4">Decision-making and low-level control in embodied agents empowered by MFM (16; 2)</li>
+      <li class="ml-4">Evaluation of the capability of embodied agents (24)</li>
+      <li class="ml-4">Generative model as world simulator (25)</li>
+      <li class="ml-4">Limitations of MFM in empowering EAI</li>
+    </Fragment></Content
+  >
+
+  <Content id="Submission-Guide" classes={{ container: 'pb-2 md:pb-2 lg:pb-2' }}>
+    <Fragment slot="title">Submission Guide</Fragment>
+    <Fragment slot="subtitle">Submission Instructions</Fragment>
+    <Fragment slot="content" classes={{ container: 'py-2' }}>
+      <>
+        <div class="mb-8">
+          Thank you for serving as a reviewer for the MFM-EAI ICML2024 workshop. Your expertise and dedication
+          contribute greatly to the success of this event. This guideline aims to provide a clear understanding of how
+          to review papers for this workshop.
+        </div>
+
+        <ul class="list-outside list-disc">
+          <li>
+            Confidentiality. All review assignments and the content of the papers you review should be kept
+            confidential. Do not share these materials or discuss them with others unless they are also reviewers for
+            the same paper.
+          </li>
+          <li>
+            Conflict of Interest. If you recognize a conflict of interest with any paper you are assigned to review,
+            please notify the program chairs immediately.
+          </li>
+          <li>
+            Length Requirement. Any paper submission exceeding 4 pages (excluding references) should be rejected
+            directly. Please verify the length of the paper before proceeding with the review. References do not count
+            towards the page limit.
+          </li>
+          <li>
+            Review Criteria. We aim for a more inclusive and diverse selection of papers, and the quality should be a
+            primary focus. Consider the following aspects:
+          </li>
+        </ul>
+        <div class="pl-4 my-2">
+          (1) Relevance: Does the paper align with the theme of the workshop, i.e., multi-modal foundation models and
+          embodied AI?
+        </div>
+        <div class="pl-4 my-2">
+          (2) Originality: Does the paper present new ideas or results, or does it significantly build upon previous
+          work?
+        </div><div class="pl-4 my-2">
+          (3) Technical Soundness: Is the methodology correct and properly explained? Are the claims supported by
+          theoretical analysis or experimental results?
+        </div><div class="pl-4 my-2">
+          (4) Clarity: Is the paper well-written and well-structured? Is it easy for readers to understand the problem,
+          the approach, and the results?
+        </div><div class="pl-4 my-2">
+          (5) Impact: If the results are applied, do they have the potential to contribute to the advancement of
+          multi-modal foundation models and embodied AI?
+        </div>
+      </></Fragment
+    >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <Content classes={{ container: 'py-2 md:py-2 lg:py-2 pb-12 md:pb-12 lg:pb-12' }}>
+    <Fragment slot="subtitle">Key Dates</Fragment>
+    <Fragment slot="content" classes={{ container: 'p-0' }}>
+      <!-- <Timeline
+        items={[
+          { title: 'May 06, 2024', description: 'Submissions Open' },
+          { title: 'May 23, 2024', description: 'Submission Deadline' },
+          { title: 'June 12, 2024', description: 'Acceptance Notification' },
+          { title: 'June 30, 2024', description: 'Camera-Ready Deadline' },
+          { title: 'July 26, 2024', description: 'Workshop Date' },
+        ]}
+        defaultIcon="tabler:arrow-right"
+      /> -->
+      <div class="flex justify-center">
+        <table class="bg-white">
+          <tbody>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Paper Submission Open</td>
+              <td class="border px-4 py-2">May 5, 2024</td>
+            </tr>
+            <tr>
+              <td class="border px-4 py-2">Paper Submission Deadline</td>
+              <td class="border px-4 py-2">May 23, 2024</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Acceptance Notification</td>
+              <td class="border px-4 py-2">June 12, 2024</td>
+            </tr>
+
+            <tr>
+              <td class="border px-4 py-2">Camera-Ready Deadline</td>
+              <td class="border px-4 py-2">June 30, 2024</td>
+            </tr>
+            <tr class="bg-gray-50">
+              <td class="border px-4 py-2">Workshop Date</td>
+              <td class="border px-4 py-2">July 26, 2024</td>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <div class="mb-2">Topics include but are not limited to:</div>
-      <li>Robustness, attack and defense, poisoning, hijacking and security</li>
-      <li>Privacy and watermarking</li>
-      <li>Fairness, accountability and governance</li>
-      <li>Truthfulness, factuality and sycophancy</li>
-      <li>Transparency, interpretability and monitoring</li>
-      <li>Scalable oversight and steering</li>
-      <li>Auditing, red-teaming and evaluating trustworthiness</li>
-      <li>Novel challenges with the introduction of new modalities</li>
-      <li>Measures against malicious model steering</li>
+      <div class="flex py-4">
+        All deadlines are specified in <a
+          href="https://www.timeanddate.com/time/zones/aoe"
+          class="hover:underline text-sky-600 font-medium px-2"
+          target="_blank">AoE</a
+        > (Anywhere on Earth).
+      </div>
+    </Fragment>
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
   </Content>
 
   <!-- Content Widget **************** -->
 
-  <Content id="Schedule">
+  <!-- <Content id="Schedule">
     <Fragment slot="content">
       <h3 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2 text-center">
         Schedule<br />
@@ -99,9 +229,10 @@ const metadata = {
       <Timezone
         items={[
           {
-            time: '2024-05-15T08:50:00',
+            time: '2024-05-15T08:40:00',
             theme: {
-              title: 'Opening Remarks (10 min)',
+              title: 'Opening Remarks (20 min)',
+              subtitles: ['LoremLoremLoremLorem', 'LoremLoremLoremLorem'],
             },
             Speaker: '',
             institution: '',
@@ -111,9 +242,9 @@ const metadata = {
           {
             time: '2024-05-15T09:00:00',
             theme: {
-              title: 'Invited talk 1: Roger Grosse (30 min)',
+              title: 'Invited talk 1(30 min)',
             },
-            Speaker: 'Roger Grosse',
+            Speaker: 'Prof. Kristen Grauman',
             institution: '',
             logoSrc: '/avatar.png',
             link: '',
@@ -121,9 +252,9 @@ const metadata = {
           {
             time: '2024-05-15T09:30:00',
             theme: {
-              title: 'Invited talk 2: Matthias Hein (30 min)',
+              title: 'Invited talk 2(30 min)',
             },
-            Speaker: 'Matthias Hein',
+            Speaker: ' Prof. Hao Su',
             institution: '',
             logoSrc: '/avatar.png',
             link: '',
@@ -141,7 +272,7 @@ const metadata = {
           {
             time: '2024-05-15T10:30:00',
             theme: {
-              title: 'Break (15 min)',
+              title: 'Coffee Break (15 min)',
             },
             Speaker: '',
             institution: '',
@@ -151,7 +282,7 @@ const metadata = {
           {
             time: '2024-05-15T10:45:00',
             theme: {
-              title: 'Best Paper Talk 1 (15 min)',
+              title: 'Best Paper Talk #1 (15 min)',
             },
             Speaker: '',
             institution: '',
@@ -161,7 +292,7 @@ const metadata = {
           {
             time: '2024-05-15T11:00:00',
             theme: {
-              title: 'Best Paper Talk 2 (15 min)',
+              title: 'Best Paper Talk #2 (15 min)',
             },
             Speaker: '',
             institution: '',
@@ -171,7 +302,7 @@ const metadata = {
           {
             time: '2024-05-15T11:15:00',
             theme: {
-              title: 'Poster session & Lunch (110 min)',
+              title: 'Poster session & Lunch (120 min)',
             },
             Speaker: '',
             institution: '',
@@ -179,49 +310,29 @@ const metadata = {
             link: '',
           },
           {
-            time: '2024-05-15T13:05:00',
+            time: '2024-05-15T13:15:00',
             theme: {
-              title: 'Invited talk 3(30 min)',
+              title: 'Invited Talk #3(30 min)',
             },
-            Speaker: 'Been Kim',
+            Speaker: 'Lerrel Pinto',
             institution: '',
             logoSrc: '/avatar.png',
             link: '',
           },
           {
-            time: '2024-05-15T13:35:00',
+            time: '2024-05-15T13:45:00',
             theme: {
-              title: 'Invited talk 4(30 min)',
+              title: 'Invited Talk #4(30 min)',
             },
-            Speaker: 'Ludwig Schmidt',
+            Speaker: 'Prof. Chuang Gan',
             institution: '',
             logoSrc: '/avatar.png',
             link: '',
           },
           {
-            time: '2024-05-15T14:05:00',
+            time: '2024-05-15T14:15:00',
             theme: {
-              title: 'Contributed Opinion Talk 2(30 min)',
-            },
-            Speaker: '',
-            institution: '',
-            logoSrc: '/avatar.png',
-            link: '',
-          },
-          {
-            time: '2024-05-15T14:35:00',
-            theme: {
-              title: 'Invited talk 5(30 min)',
-            },
-            Speaker: 'Florian Tram‘er',
-            institution: '',
-            logoSrc: '/avatar.png',
-            link: '',
-          },
-          {
-            time: '2024-05-15T15:05:00',
-            theme: {
-              title: 'Break (15 min)',
+              title: 'Contributed Opinion Talk #2(30 min)',
             },
             Speaker: '',
             institution: '',
@@ -229,17 +340,37 @@ const metadata = {
             link: '',
           },
           {
-            time: '2024-05-15T15:20:00',
+            time: '2024-05-15T14:45:00',
             theme: {
-              title: 'Invited talk 6(30 min)',
+              title: 'Invited Talk #5(30 min)',
             },
-            Speaker: 'Ivan Evtimov',
+            Speaker: 'Prof. Ziwei Liu',
             institution: '',
             logoSrc: '/avatar.png',
             link: '',
           },
           {
-            time: '2024-05-15T15:50:00',
+            time: '2024-05-15T15:15:00',
+            theme: {
+              title: 'Coffee Break(15 min)',
+            },
+            Speaker: '',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T15:30:00',
+            theme: {
+              title: 'Invited Talk #6(15 min)',
+            },
+            Speaker: 'Dr. Chris Paxton',
+            institution: '',
+            logoSrc: '/avatar.png',
+            link: '',
+          },
+          {
+            time: '2024-05-15T16:00:00',
             theme: {
               title: 'Panel (60 min)',
             },
@@ -249,17 +380,7 @@ const metadata = {
             link: '',
           },
           {
-            time: '2024-05-15T16:50:00',
-            theme: {
-              title: 'Breakout rooms discussion (30 min)',
-            },
-            Speaker: '',
-            institution: '',
-            logoSrc: '/avatar.png',
-            link: '',
-          },
-          {
-            time: '2024-05-15T17:20:00',
+            time: '2024-05-15T17:00:00',
             theme: {
               title: 'Closing remarks (10 min)',
             },
@@ -274,10 +395,10 @@ const metadata = {
     <Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
 
   <!-- Brands Widget ****************** -->
-
+  <!-- 
   <Brands
     id="Speakers"
     title="Speakers"
@@ -285,276 +406,383 @@ const metadata = {
       {
         src: '/speaker01.png',
         alt: 'speaker01',
-        name: 'Roger Grosse',
-        university: 'University of Toronto',
-        bioLink: 'https://www.cs.toronto.edu/~rgrosse/',
+        name: 'Kristen Grauman',
+        university: 'University of Texas at Austin',
+        bioLink: 'https://www.cs.utexas.edu/users/grauman/',
       },
       {
         src: '/speaker02.png',
         alt: 'speaker02',
-        name: 'Been Kim',
-        university: 'Google DeepMind',
-        bioLink: 'https://beenkim.github.io/',
+        name: 'Hao Su',
+        university: 'University of California San Diego',
+        bioLink: 'https://cseweb.ucsd.edu/~haosu/',
       },
       {
         src: '/speaker03.png',
         alt: 'speaker03',
-        name: 'Florian Tramèr',
-        university: 'ETH Zürich',
-        bioLink: 'https://www.floriantramer.com/',
+        name: 'Lerrel Pinto',
+        university: 'NYU Courant',
+        bioLink: 'https://www.lerrelpinto.com/',
       },
       {
         src: '/speaker04.png',
         alt: 'speaker04',
-        name: 'Ludwig Schmidt',
-        university: 'University of Washington',
-        bioLink: 'https://people.csail.mit.edu/ludwigs/',
+        name: 'Ishan Misra',
+        university: 'FAIR',
+        bioLink: 'https://imisra.github.io/',
       },
       {
         src: '/speaker05.png',
         alt: 'speaker05',
-        name: 'Matthias Hein',
-        university: 'University of Tübingen',
-        bioLink: 'http://bit.ly/3UAht4W',
+        name: 'Ziwei Liu',
+        university: 'Nanyang Technological University',
+        bioLink: 'https://liuziwei7.github.io/',
       },
       {
         src: '/speaker06.png',
         alt: 'speaker06',
-        name: 'Ivan Evtimov',
-        university: 'Meta',
-        bioLink: 'https://ivanevtimov.eu/',
+        name: 'Chris Paxton',
+        university: 'FAIR',
+        bioLink: 'https://cpaxton.github.io/about/',
+      },
+      {
+        src: '/speaker09.png',
+        alt: 'speaker09',
+        name: 'He Wang',
+        university: 'Peking University',
+        bioLink: 'https://hughw19.github.io/',
+      },
+      {
+        src: '/speaker10.png',
+        alt: 'speaker10',
+        name: 'Joon Sung Park',
+        university: 'Stanford University',
+        bioLink: 'https://www.joonsungpark.com/',
+      },
+      {
+        src: '/speaker11.png',
+        alt: 'speaker11',
+        name: 'Hao-Shu Fang',
+        university: 'Stanford University',
+        bioLink: 'https://fang-haoshu.github.io/',
+      },
+      {
+        src: '/speaker12.png',
+        alt: 'speaker12',
+        name: 'Yilun Du',
+        university: 'MIT EECS',
+        bioLink: 'https://yilundu.github.io/',
       },
     ]}
-  />
+  /> -->
   <!-- Content Widget **************** -->
 
-  <Content
-    id="Challenges"
-    columns={4}
-    items={[
-      {
-        title: 'Welcome to the ECCV-TiFA 2023 Workshop on End-to-End Autonomous Driving!',
-        description: `This workshop aims to bring together leading researchers and practitioners to discuss upcoming paradigms for autonomous vehicles. Central to the program is a series of invited talks and four new challenges in the self-driving domain. Each challenge combines new perspectives of multiple components in perception and planning compared to conventional pipelines. Winners of the challenges will present their results and insights as part of the workshop. We invite researchers around the world to build new algorithms to tackle these challenging, real-world autonomous driving tasks!`,
-      },
-      {
-        title: 'Welcome to the ECCV-TiFA 2023 Workshop on End-to-End Autonomous Driving!',
-        description: `This workshop aims to bring together leading researchers and practitioners to discuss upcoming paradigms for autonomous vehicles. Central to the program is a series of invited talks and four new challenges in the self-driving domain. Each challenge combines new perspectives of multiple components in perception and planning compared to conventional pipelines. Winners of the challenges will present their results and insights as part of the workshop. We invite researchers around the world to build new algorithms to tackle these challenging, real-world autonomous driving tasks!`,
-      },
-      {
-        title: 'Welcome to the ECCV-TiFA 2023 Workshop on End-to-End Autonomous Driving!',
-        description: `This workshop aims to bring together leading researchers and practitioners to discuss upcoming paradigms for autonomous vehicles. Central to the program is a series of invited talks and four new challenges in the self-driving domain. Each challenge combines new perspectives of multiple components in perception and planning compared to conventional pipelines. Winners of the challenges will present their results and insights as part of the workshop. We invite researchers around the world to build new algorithms to tackle these challenging, real-world autonomous driving tasks!`,
-      },
-      {
-        title: 'Welcome to the ECCV-TiFA 2023 Workshop on End-to-End Autonomous Driving!',
-        description: `This workshop aims to bring together leading researchers and practitioners to discuss upcoming paradigms for autonomous vehicles. Central to the program is a series of invited talks and four new challenges in the self-driving domain. Each challenge combines new perspectives of multiple components in perception and planning compared to conventional pipelines. Winners of the challenges will present their results and insights as part of the workshop. We invite researchers around the world to build new algorithms to tackle these challenging, real-world autonomous driving tasks!`,
-      },
-    ]}
-  >
-    <Fragment slot="content">
-      <h3 class="text-3xl font-bold tracking-tight dark:text-white sm:text-4xl mb-2">
-        Challenges<br /><span class="text-2xl">Converting visitors into customers</span>
-      </h3>
-      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quae dolore atque facilis aliquam corrupti adipisci quam,
-      ex laboriosam perferendis quis, iste soluta minus obcaecati nesciunt fugit debitis, laborum est sapiente.
-    </Fragment><Fragment slot="bg">
+  <!--  
+  <Content id="Challenges" title="Challenges">
+    <Fragment slot="content"
+      ><Testimonials
+        classes={{ container: 'py-0 md:py-0 lg:py-0 ' }}
+        testimonials={[
+          {
+            title: 'Track 1',
+            name: 'EgoPlan Challenge',
+            image: {
+              src: '/challenge1.png',
+              alt: 'Sidney Hansen Image',
+            },
+            link: '/challenges#TRACK1',
+            job: 'The EgoPlan Challenge aims to evaluate the potential of Multimodal Large Language Models (MLLMs) as embodied task planners in real-world scenarios. In this challenge, MLLMs are required to predict the next feasible action given a real-time task progress video, current visual observation, and an open-form language instruction as inputs. Sourced from egocentric videos of everyday household activities, the EgoPlan Challenge features realistic tasks, diverse actions, and complex real-world visual observations. ',
+          },
+          {
+            title: 'Track 2',
+            name: 'Composable Generalization Agent Challenge',
+            image: {
+              src: '/challenge2.png',
+              alt: 'Sidney Hansen Image',
+            },
+            link: '/challenges#TRACK2',
+            job: 'The Composable Generalization Challenge focuses on exploring the capabilities of visual language models (VLMs) for high-level planning in embodied tasks that involve robotic manipulation. Through endowing the embodied agents with the ability to break down novel physical skills like “wipe”, “throw” and “receive” into constituent primitive skills, mitigating the unpredictability and intricacy when expanding the abilities of agents to novel physical skills. The challenge includes a variety of complex tasks, and each demonstration episode is clipped by the  meticulously-designed primitive skills.',
+          },
+          {
+            title: 'Track 3',
+            name: 'World Model Challenge',
+            image: {
+              src: 'https://images.unsplash.com/photo-1714244322811-f1387dc93909?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+              alt: 'Sidney Hansen Image',
+            },
+            link: '/challenges#TRACK3',
+            job: 'The World Model Challenge aims to evaluate the potential of World Simulator as embodied task planners and sequential decision makers in real-world scenarios. In this challenge, World Simulators are required to generate a video of an embodied scene based on the given open-form language instructions and the available history image observation frames. The task scenarios come from different embodied tasks such as robotic arms, automatic driving, etc. The generated video will be thoroughly evaluated through special embodied intelligence metrics, including physical rules and motion trajectories, to verify the embodied capabilities of the video.',
+          },
+        ]}
+        callToAction={{
+          text: 'See more',
+          href: '/challenges',
+        }}
+      /></Fragment
+    ><Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment>
-  </Content>
+  </Content> -->
   <!-- Brands Widget ****************** -->
 
   <Brands
     id="Organizers"
-    title="Organizers"
+    title="Organizing Committee"
     icons={[]}
     images={[
       {
         src: '/organizer01.png',
         alt: 'organizer01',
         name: 'Zhenfei Yin',
-        university: 'University of Sydney',
+        university: 'USYD',
         bioLink: 'https://scholar.google.com.hk/citations?user=ngPR1dIAAAAJ&hl=zh-CN',
       },
       {
-        src: '/organizer02.png',
-        alt: 'organizer02',
-        name: 'Yawen Duan',
-        university: 'University of Cambridge',
-        bioLink: 'https://scholar.google.com/citations?user=IJQlPvYAAAAJ&hl=en',
+        src: '/organizer12.png',
+        alt: 'organizer12',
+        name: 'Zhenhua Xu',
+        university: 'HKU',
+        bioLink: 'https://tonyxuqaq.github.io/',
       },
       {
-        src: '/organizer03.png',
-        alt: 'organizer03',
-        name: 'Jianfeng Chi',
-        university: 'Meta AI',
-        bioLink: 'https://jfchi.github.io/',
+        src: '/organizer15.png',
+        alt: 'organizer15',
+        name: 'Haoshu Fang',
+        university: 'MIT',
+        bioLink: 'https://fang-haoshu.github.io/',
       },
       {
-        src: '/organizer04.png',
-        alt: 'organizer04',
-        name: 'Hang Su',
-        university: 'Tsinghua University',
-        bioLink: 'https://www.suhangss.me/',
+        src: '/organizer05.png',
+        alt: 'organizer05',
+        name: 'Xihui Liu',
+        university: 'HKU',
+        bioLink: 'https://xh-liu.github.io/',
       },
       {
-        src: '/organizer06.png',
-        alt: 'organizer06',
-        name: 'Jing Shao',
-        university: 'Shanghai AI Laboratory',
-        bioLink: 'https://amandajshao.github.io/',
+        src: '/organizer13.png',
+        alt: 'organizer13',
+        name: 'Mahi Shafiullah',
+        university: 'NYU',
+        bioLink: 'https://mahis.life/',
       },
       {
-        src: '/organizer07.png',
-        alt: 'organizer07',
-        name: 'Pavel Izmailov',
-        university: 'OpenAI',
-        bioLink: 'https://izmailovpavel.github.io/',
+        src: '/organizer17.png',
+        alt: 'organizer17',
+        name: 'Zhuoling Li',
+        university: 'HKU',
+        bioLink: 'https://lizhuoling.github.io/',
+      },
+      {
+        src: '/organizer18.png',
+        alt: 'organizer18',
+        name: 'Zhangyang Qi',
+        university: 'HKU',
+        bioLink: 'https://scholar.google.com/citations?hl=en&user=kwVLpo8AAAAJ',
+      },
+      {
+        src: '/organizer11.png',
+        alt: 'organizer11',
+        name: 'Quan Vuong',
+        university: 'Google',
+        bioLink: 'https://quanvuong.github.io/',
+      },
+      {
+        src: '/organizer14.png',
+        alt: 'organizer14',
+        name: 'Yining Hong',
+        university: 'UCLA',
+        bioLink: 'https://evelinehong.github.io/',
       },
       {
         src: '/organizer08.png',
         alt: 'organizer08',
-        name: 'Zhengyi Wang',
-        university: 'Tsinghua University',
-        bioLink: 'https://thuwzy.github.io/',
-      },
-      {
-        src: '/organizer09.png',
-        alt: 'organizer09',
-        name: 'Andy Zou',
-        university: 'Carnegie Mellon University',
-        bioLink: 'https://andyzoujm.github.io/',
-      },
-    ]}
-  />
-  <!-- Brands Widget ****************** -->
-
-  <Brands
-    id="Organizers"
-    title=""
-    classes={{ container: 'lg:py-1 md:py-1' }}
-    tagline="Challenge Chair"
-    icons={[]}
-    images={[
-      {
-        src: '/organizer01.png',
-        alt: 'organizer01',
-        name: 'Zhenfei Yin',
-        university: 'University of Sydney',
-        bioLink: 'https://scholar.google.com.hk/citations?user=ngPR1dIAAAAJ&hl=zh-CN',
-      },
-      {
-        src: '/organizer02.png',
-        alt: 'organizer02',
-        name: 'Yawen Duan',
-        university: 'University of Cambridge',
-        bioLink: 'https://scholar.google.com/citations?user=IJQlPvYAAAAJ&hl=en',
-      },
-      {
-        src: '/organizer03.png',
-        alt: 'organizer03',
-        name: 'Jianfeng Chi',
-        university: 'Meta AI',
-        bioLink: 'https://jfchi.github.io/',
-      },
-      {
-        src: '/organizer04.png',
-        alt: 'organizer04',
-        name: 'Hang Su',
-        university: 'Tsinghua University',
-        bioLink: 'https://www.suhangss.me/',
-      },
-      {
-        src: '/organizer06.png',
-        alt: 'organizer06',
-        name: 'Jing Shao',
-        university: 'Shanghai AI Laboratory',
-        bioLink: 'https://amandajshao.github.io/',
+        name: 'Hengshuang Zhao',
+        university: 'HKU',
+        bioLink: 'https://hszhao.github.io/',
       },
       {
         src: '/organizer07.png',
         alt: 'organizer07',
-        name: 'Pavel Izmailov',
-        university: 'OpenAI',
-        bioLink: 'https://izmailovpavel.github.io/',
+        name: 'Mohamed Elhoseiny',
+        university: 'KAUST',
+        bioLink: 'https://www.mohamed-elhoseiny.com/',
       },
       {
-        src: '/organizer08.png',
-        alt: 'organizer08',
-        name: 'Zhengyi Wang',
-        university: 'Tsinghua University',
-        bioLink: 'https://thuwzy.github.io/',
+        src: '/organizer16.png',
+        alt: 'organizer16',
+        name: 'Yong Jae Lee',
+        university: 'UW–Madison',
+        bioLink: 'https://pages.cs.wisc.edu/~yongjaelee/',
       },
       {
         src: '/organizer09.png',
         alt: 'organizer09',
-        name: 'Andy Zou',
-        university: 'Carnegie Mellon University',
-        bioLink: 'https://andyzoujm.github.io/',
+        name: 'Takayuki Osa',
+        university: 'The University of Tokyo',
+        bioLink: 'https://takaosa.github.io/',
+      },
+      {
+        src: '/organizer10.jpg',
+        alt: 'organizer10',
+        name: 'Lu Sheng',
+        university: 'BUAA',
+        bioLink: 'https://scholar.google.com.hk/citations?user=_8lB7xcAAAAJ&hl=en',
       },
     ]}
   />
-  <!-- Brands Widget ****************** -->
 
+  <!-- Brands Widget ****************** -->
   <Brands
-    classes={{ container: 'lg:py-1 md:py-1 lg:pb-20 md:pb-16' }}
-    id="Organizers"
-    tagline="program committee"
+    title="Challenge Chair"
+    subtitle="Track 1: EgoPlan Challenge"
     icons={[]}
     images={[
       {
-        src: '/organizer01.png',
-        alt: 'organizer01',
-        name: 'Zhenfei Yin',
-        university: 'University of Sydney',
+        src: '/chair01.png',
+        alt: 'Chair01',
+        name: 'Yi Chen',
+        university: 'Tencent AI Lab & HKU',
+        bioLink:
+          'https://scholar.google.com/citations?hl=zh-CN&user=3ep5ODoAAAAJ&view_op=list_works&gmla=ABOlHiwtBZ6dPRQxbT_0zyHgyyfxWv6IDhjGgB5TWNp_hIbNB9KPK_25dnvRlpTP4BsscgCjb6EkIR5z-tJWzzMYq_cmLp0oNtEnSODMd30',
+      },
+      {
+        src: '/chair02.png',
+        alt: 'Chair02',
+        name: 'Yuying Ge',
+        university: 'Tencent AI Lab',
+        bioLink: 'https://geyuying.github.io/',
+      },
+      {
+        src: '/chair03.png',
+        alt: 'chair03',
+        name: 'Yixiao Ge',
+        university: 'ARC Lab, Tencent PCG & Tencent AI Lab',
+        bioLink: 'https://geyixiao.com/',
+      },
+      {
+        src: '/chair04.png',
+        alt: 'Chair04',
+        name: 'Mingyu Ding',
+        university: 'UC Berkeley',
+        bioLink: 'https://dingmyu.github.io/',
+      },
+      {
+        src: '/chair05.png',
+        alt: 'Chair05',
+        name: 'Bohao Li',
+        university: 'Tencent AI Lab',
+        bioLink: 'https://bohao-lee.github.io/',
+      },
+      {
+        src: '/chair06.png',
+        alt: 'Chair06',
+        name: 'Rui Wang',
+        university: 'Tencent AI Lab',
+        bioLink: 'https://scholar.google.com/citations?view_op=list_works&hl=zh-CN&user=nTPdz2sAAAAJ',
+      },
+      {
+        src: '/chair07.png',
+        alt: 'Chair07',
+        name: 'Ruifeng Xu',
+        university: 'Peng Cheng Laboratory',
+        bioLink: 'https://faculty.hitsz.edu.cn/xuruifeng',
+      },
+      {
+        src: '/chair08.png',
+        alt: 'Chair08',
+        name: 'Ying Shan',
+        university: 'ARC Lab, Tencent PCG & Tencent AI Lab',
+        bioLink: 'https://www.linkedin.com/in/YingShanProfile/',
+      },
+      {
+        src: '/organizer05.png',
+        alt: 'Chair09',
+        name: 'Xihui Liu',
+        university: 'HKU',
+        bioLink: 'https://xh-liu.github.io/',
+      },
+    ]}
+  />
+  <Brands
+    subtitle="Track 2: Composable Generalization Agent Challenge"
+    classes={{ container: 'lg:py-0 md:py-0' }}
+    icons={[]}
+    images={[
+      {
+        src: '/track201.png',
+        alt: 'track201',
+        name: 'Zeren Chen',
+        university: 'BUAA',
+        bioLink: 'https://scholar.google.com/citations?user=fdDOA-0AAAAJ',
+      },
+      {
+        src: '/track204.jpg',
+        alt: 'track204',
+        name: 'Xiaoya Lu',
+        university: 'UESTC',
+        bioLink: 'https://ursulalujun.github.io/about.html',
+      },
+      {
+        src: '/track205.jpg',
+        alt: 'track205',
+        name: 'Zehuan Huang',
+        university: 'BUAA',
+        bioLink: 'https://scholar.google.com/citations?hl=zh-CN&user=U3VbX6kAAAAJ',
+      },
+      {
+        src: '/track202.png',
+        alt: 'track202',
+        name: 'Stone Tao',
+        university: 'UC San Diego',
+        bioLink: 'https://www.stoneztao.com/',
+      },
+      {
+        src: '/track203.png',
+        alt: 'track203',
+        name: 'Xuanlin Li',
+        university: 'UC San Diego',
         bioLink: 'https://scholar.google.com.hk/citations?user=ngPR1dIAAAAJ&hl=zh-CN',
       },
       {
-        src: '/organizer02.png',
-        alt: 'organizer02',
-        name: 'Yawen Duan',
-        university: 'University of Cambridge',
-        bioLink: 'https://scholar.google.com/citations?user=IJQlPvYAAAAJ&hl=en',
+        src: '/speaker02.png',
+        alt: 'speaker02',
+        name: 'Hao Su',
+        university: 'UC San Diego',
+        bioLink: 'https://cseweb.ucsd.edu/~haosu/',
+      },
+    ]}
+  />
+  <Brands
+    subtitle="Track 3: World Model Challenge"
+    icons={[]}
+    images={[
+      {
+        src: '/track01.png',
+        alt: 'track01',
+        name: 'Yiran Qin',
+        university: 'CUHK-Shenzhen',
+        bioLink: 'https://github.com/IranQin',
       },
       {
-        src: '/organizer03.png',
-        alt: 'organizer03',
-        name: 'Jianfeng Chi',
-        university: 'Meta AI',
-        bioLink: 'https://jfchi.github.io/',
-      },
-      {
-        src: '/organizer04.png',
-        alt: 'organizer04',
-        name: 'Hang Su',
-        university: 'Tsinghua University',
-        bioLink: 'https://www.suhangss.me/',
-      },
-      {
-        src: '',
-        alt: 'organizer06',
-        name: 'Jing Shao',
-        university: 'Shanghai AI Laboratory',
-        bioLink: 'https://amandajshao.github.io/',
-      },
-      {
-        src: '',
-        alt: 'organizer07',
-        name: 'Pavel Izmailov',
-        university: 'OpenAI',
-        bioLink: 'https://izmailovpavel.github.io/',
-      },
-      {
-        src: '',
-        alt: 'organizer08',
+        src: '/track02.png',
+        alt: 'track02',
         name: 'Zhengyi Wang',
-        university: 'Tsinghua University',
+        university: 'THU',
         bioLink: 'https://thuwzy.github.io/',
       },
       {
-        src: '',
-        alt: 'organizer09',
-        name: 'Andy Zou',
-        university: 'Carnegie Mellon University',
-        bioLink: 'https://andyzoujm.github.io/',
+        src: '/track03.png',
+        alt: 'track03',
+        name: 'Hang Su',
+        university: 'THU',
+        bioLink: 'https://www.suhangss.me/',
+      },
+      {
+        src: '/track04.png',
+        alt: 'track04',
+        name: 'Jun Zhu',
+        university: 'THU',
+        bioLink: 'https://ml.cs.tsinghua.edu.cn/~jun/index.shtml',
       },
     ]}
   />
@@ -567,27 +795,12 @@ const metadata = {
     icons={[]}
     images={[
       {
-        src: '/committee01.png',
-        alt: 'committee01',
-        name: 'Peyman Najafirad',
-        university: 'University of Texas, San Antonio',
-        bioLink: 'https://scholar.google.com/citations?user=uoCn8c8AAAAJ&hl=en',
+        src: '/organizer06.jpg',
+        alt: 'organizer06',
+        name: 'Jing Shao',
+        university: 'Shanghai AI Lab',
+        bioLink: 'https://amandajshao.github.io/',
       },
-      {
-        src: '/committee02.png',
-        alt: 'committee02',
-        name: 'Neil Zhenqiang Gong',
-        university: 'Duke University',
-        bioLink: 'https://people.duke.edu/~zg70/',
-      },
-      {
-        src: '/organizer05.png',
-        alt: 'organizer05',
-        name: 'Cihang Xie',
-        university: 'University of California, Santa Cruz',
-        bioLink: 'https://cihangxie.github.io/',
-      },
-
       {
         src: '/committee04.png',
         alt: 'committee04',
@@ -596,31 +809,46 @@ const metadata = {
         bioLink: 'https://mmlab.siat.ac.cn/yuqiao',
       },
       {
+        src: '/organizer03.png',
+        alt: 'organizer03',
+        name: 'Cewu Lu',
+        university: 'SJTU',
+        bioLink: 'https://www.mvig.org/',
+      },
+      {
+        src: '/speaker07.png',
+        alt: 'speaker07',
+        name: 'Chuang Gan',
+        university: 'MIT-IBM Watson AI Lab',
+        bioLink: 'https://people.csail.mit.edu/ganchuang/',
+      },
+      {
+        src: '/organizer04.png',
+        alt: 'organizer04',
+        name: 'Tatsuya Harada',
+        university: 'The University of Tokyo',
+        bioLink: 'https://www.mi.t.u-tokyo.ac.jp/harada/',
+      },
+      {
+        src: '/organizer02.png',
+        alt: 'organizer02',
+        name: 'Pete Florence',
+        university: 'Google DeepMind',
+        bioLink: 'https://www.peteflorence.com/',
+      },
+      {
         src: '/committee06.png',
         alt: 'committee06',
         name: 'Wanli Ouyang',
         university: 'Shanghai AI Lab',
         bioLink: 'https://wlouyang.github.io/',
       },
-      {
-        src: '/committee05.png',
-        alt: 'committee05',
-        name: 'Alan Yuille',
-        university: 'Johns Hopkins University',
-        bioLink: 'https://www.cs.jhu.edu/~ayuille/',
-      },
-      {
-        src: '/committee07.png',
-        alt: 'committee07',
-        name: 'Jun Zhu',
-        university: 'Tsinghua University',
-        bioLink: 'https://ml.cs.tsinghua.edu.cn/~jun/index.shtml',
-      },
+
       {
         src: '/committee08.png',
         alt: 'committee08',
         name: 'Dacheng Tao',
-        university: 'University of Sydney',
+        university: 'NTU',
         bioLink: 'https://ieeexplore.ieee.org/author/37269935500',
       },
       {
@@ -630,117 +858,346 @@ const metadata = {
         university: 'University of Oxford',
         bioLink: 'https://www.robots.ox.ac.uk/~phst/',
       },
-      {
-        src: '/committee10.png',
-        alt: 'committee10',
-        name: 'Xuanjing Huang',
-        university: 'Fudan University',
-        bioLink: 'https://xuanjing-huang.github.io/',
-      },
-      {
-        src: '/committee03.png',
-        alt: 'committee03',
-        name: 'Bo Li',
-        university: 'University of Illinois, Urbana Champaign',
-        bioLink: 'https://aisecure.github.io/',
-      },
     ]}
     ><Fragment slot="bg">
       <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
     </Fragment></Brands
   >
-  <Content id="References">
-    <Fragment slot="title"> References </Fragment>
-    <Fragment slot="content">
-      <p>
-        [1] L. Bailey, E. Ong, S. Russell, and S. Emmons. Image hijacks: Adversarial images can control generative
-        models at runtime, 2023.
-      </p>
-      <p>
-        [2] M. Bhatt, S. Chennabasappa, C. Nikolaidis, S. Wan, I. Evtimov, D. Gabi, D. Song, F. Ahmad, C. Aschermann, L.
-        Fontana, S. Frolov, R. P. Giri, D. Kapil, Y. Kozyrakis, D. LeBlanc, J. Mi lazzo, A. Straumann, G. Synnaeve, V.
-        Vontimitta, S. Whitman, and J. Saxe. Purple llama cyberseceval: A secure coding benchmark for language models,
-        2023.
-      </p>
-    </Fragment>
-  </Content>
 
   <!-- FAQs Widget ******************* -->
 
   <FAQs
-    title="Frequently Asked Questions"
+    title="Submission Q&A"
     items={[
       {
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestias laboriosam ',
-        description: 'aliquam officiis nulla consectetur',
+        title: 'What is the deadline for submission?',
+        description: 'The deadline for submission is May 23, 2024, anywhere in the world.',
         icon: 'tabler:help-octagon',
       },
       {
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestias laboriosam ',
-        description: 'aliquam officiis nulla consectetur',
+        title: 'What is the page-limit for the submissions(4-pages, 8-pages, with or without references)? ',
+        description: 'The page limit for submissions is 4 pages, without references.',
         icon: 'tabler:help-octagon',
       },
       {
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestias laboriosam ',
-        description: 'aliquam officiis nulla consectetur',
+        title: 'What template do we use for the submission?',
+        description: 'The template should be the same as the one used for ICML 2024 submissions.',
         icon: 'tabler:help-octagon',
       },
       {
-        title: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus molestias laboriosam ',
-        description: 'aliquam officiis nulla consectetur',
+        title: 'Are papers previously presented at other conferences accepted?',
+        description:
+          'Yes, papers previously presented at other conferences are accepted. If submitting a paper previously accepted at another conference, a copy of the acceptance notification email must be provided.',
         icon: 'tabler:help-octagon',
       },
-    ]}
-  >
-    <Fragment slot="bg">
-      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
-    </Fragment>
-  </FAQs>
-
-  <!-- Brands Widget ****************** -->
-
-  <Sponsor
-    id="Sponsor"
-    tagline="Sponsor"
-    icons={[]}
-    images={[
       {
-        src: 'https://cdn.pixabay.com/photo/2015/05/26/09/37/paypal-784404_1280.png',
-        alt: 'Paypal',
+        title: 'Is it fine if we submit our work to a different conference at the same time as the workshop?',
+        description:
+          "Yes, it's acceptable to submit your work to a different conference at the same time as our workshop.",
+        icon: 'tabler:help-octagon',
       },
       {
-        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/48/visa-6850402_1280.png',
-        alt: 'Visa',
+        title: 'Will the papers be archived/will there be proceedings?',
+        description:
+          'Accepted papers will not be included in the proceedings but will have a poster presentation on the day of the workshop.',
+        icon: 'tabler:help-octagon',
       },
       {
-        src: 'https://cdn.pixabay.com/photo/2013/10/01/10/29/ebay-189064_1280.png',
-        alt: 'Ebay',
-      },
-
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/04/13/17/45/icon-720944_1280.png',
-        alt: 'Youtube',
+        title: 'Is anonymized submission required for papers?',
+        description:
+          'Yes, all submitted papers must be anonymized. Papers previously accepted at other conferences do not need to be anonymized.',
+        icon: 'tabler:help-octagon',
       },
       {
-        src: 'https://cdn.pixabay.com/photo/2013/02/12/09/07/microsoft-80658_1280.png',
-        alt: 'Microsoft',
+        title: 'Is supplementary material allowed? What formats are supported?',
+        description: 'Yes, supplementary material is optional, and supported formats include pdf, mp4, and zip.',
+        icon: 'tabler:help-octagon',
       },
       {
-        src: 'https://cdn.pixabay.com/photo/2015/04/23/17/41/node-js-736399_1280.png',
-        alt: 'Node JS',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2015/10/31/12/54/google-1015751_1280.png',
-        alt: 'Google',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2021/12/06/13/45/meta-6850393_1280.png',
-        alt: 'Meta',
-      },
-      {
-        src: 'https://cdn.pixabay.com/photo/2013/01/29/22/53/yahoo-76684_1280.png',
-        alt: 'Yahoo',
+        title: 'How will papers be reviewed?',
+        description: 'All papers will be peer-reviewed by three experts in the field in a double-blind manner.',
+        icon: 'tabler:help-octagon',
       },
     ]}
   />
+
+  <Content id="References">
+    <Fragment slot="title"> References </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+    <Fragment slot="content">
+      <p class="text-slate-500">
+        [1] Ajay, A., Han, S., Du, Y., Li, S., Gupta, A., Jaakkola, T., Tenenbaum, J., Kaelbling, L., Srivastava, A.,
+        Agrawal, P.: Compositional foundation models for hierarchical planning (2023)
+      </p>
+      <p class="text-slate-500">
+        [2] Baker, B., Akkaya, I., Zhokov, P., Huizinga, J., Tang, J., Ecoffet, A., Houghton, B., Sampedro, R., Clune,
+        J.: Video pretraining (vpt): Learning to act by watching unlabeled online videos. Advances in Neural Information
+        Processing Systems 35, 24639–24654 (2022)
+      </p>
+      <p class="text-slate-500">
+        [3] Betker, J., Goh, G., Jing, L., Brooks, T., Wang, J., Li, L., Ouyang, L., Zhuang, J., Lee, J., Guo, Y., et
+        al.: Improving image generation with better captions. Com- puter Science. https://cdn. openai.
+        com/papers/dall-e-3. pdf 2(3), 8 (2023)
+      </p>
+      <p class="text-slate-500">
+        [4] Brohan, A., Brown, N., Carbajal, J., Chebotar, Y., Chen, X., Choromanski, K., Ding, T., Driess, D., Dubey,
+        A., Finn, C., et al.: Rt-2: Vision-language- action models transfer web knowledge to robotic control. arXiv
+        preprint arXiv:2307.15818 (2023)
+      </p>
+      <p class="text-slate-500">
+        [5] Brooks, T., Peebles, B., Holmes, C., DePue, W., Guo, Y., Jing, L., Schnurr, D., Taylor, J., Luhman, T.,
+        Luhman, E., Ng, C., Wang, R., Ramesh, A.: Video generation models as world simulators (2024),
+        https://openai.com/research/ video-generation-models-as-world-simulators
+      </p>
+
+      <div>
+        <div id="content" class="overflow-hidden max-h-0 transition-max-height duration-700 ease-in-out">
+          <p class="text-slate-500">
+            [6] Chen, Z., Shi, Z., Lu, X., He, L., Qian, S., Fang, H.S., Yin, Z., Ouyang, W., Shao, J., Qiao, Y., et
+            al.: Rh20t-p: A primitive-level robotic dataset towards composable generalization agents. arXiv preprint
+            arXiv:2403.19622 (2024)
+          </p>
+          <p class="text-slate-500">
+            [7] Collaboration, O.X.E., Padalkar, A., Pooley, A., Jain, A., Bewley, A., Herzog, A., Irpan, A., Khazatsky,
+            A., Rai, A., Singh, A., Brohan, A., Raffin, A., Wahid, A., Burgess-Limerick, B., Kim, B., Sch ̈olkopf, B.,
+            Ichter, B., Lu, C., Xu, C., Finn, C., Xu, C., Chi, C., Huang, C., Chan, C., Pan, C., Fu, C., Devin, C.,
+            Driess, D., Pathak, D., Shah, D., B ̈uchler, D., Kalashnikov, D., Sadigh, D., Johns, E., Ceola, F., Xia, F.,
+            Stulp, F., Zhou, G., Sukhatme, G.S., Salhotra, G., Yan, G., Schiavi, G., Su, H., Fang, H.S., Shi, H., Amor,
+            H.B., Christensen, H.I., Furuta, H., Walke, H., Fang, H., Mordatch, I., Radosavovic, I., Leal, I., Liang,
+            J., Kim, J., Schneider, J., Hsu, J., Bohg, J., Bingham, J., Wu, J., Wu, J., Luo, J., Gu, J., Tan, J., Oh,
+            J., Malik, J., Tompson, J., Yang, J., Lim, J.J., Silv ́erio, J., Han, J., Rao, K., Pertsch, K., Hausman, K.,
+            Go, K., Gopalakrishnan, K., Goldberg, K., Byrne, K., Oslund, K., Kawa- harazuka, K., Zhang, K., Majd, K.,
+            Rana, K., Srinivasan, K., Chen, L.Y., Pinto, L., Tan, L., Ott, L., Lee, L., Tomizuka, M., Du, M., Ahn, M.,
+            Zhang, M., Ding, M., Srirama, M.K., Sharma, M., Kim, M.J., Kanazawa, N., Hansen, N., Heess, N., Joshi, N.J.,
+            Suenderhauf, N., Palo, N.D., Shafiullah, N.M.M., Mees, O., Kroemer, O., Sanketi, P.R., Wohlhart, P., Xu, P.,
+            Sermanet, P., Sundaresan, P., Vuong, Q., Rafailov, R., Tian, R., Doshi, R., Mart ́ın-Mart ́ın, R., Mendonca,
+            R., Shah, R., Hoque, R., Julian, R., Bustamante, S., Kirmani, S., Levine, S., Moore, S., Bahl, S., Dass, S.,
+            Song, S., Xu, S., Haldar, S., Adebola, S., Guist, S., Nasiriany, S., Schaal, S., Welker, S., Tian, S.,
+            Dasari, S., Belkhale, S., Osa, T., Harada, T., Matsushima, T., Xiao, T., Yu, T., Ding, T., Davchev, T.,
+            Zhao, T.Z., Armstrong, T., Darrell, T., Jain, V., Vanhoucke, V., Zhan, W., Zhou, W., Burgard, W., Chen, X.,
+            Wang, X., Zhu, X., Li, X., Lu, Y., Chebotar, Y., Zhou, Y., Zhu, Y., Xu, Y., Wang, Y., Bisk, Y., Cho, Y.,
+            Lee, Y., Cui, Y., hua Wu, Y., Tang, Y., Zhu, Y., Li, Y., Iwasawa, Y., Matsuo, Y., Xu, Z., Cui, Z.J.: Open
+            X-Embodiment: Robotic learning datasets and RT-X models. https: //arxiv.org/abs/2310.08864 (2023)
+          </p>
+          <p class="text-slate-500">
+            [8] Driess, D., Xia, F., Sajjadi, M.S., Lynch, C., Chowdhery, A., Ichter, B., Wahid, A., Tompson, J., Vuong,
+            Q., Yu, T., et al.: Palm-e: An embodied multimodal language model. arXiv preprint arXiv:2303.03378 (2023)
+          </p>
+          <p class="text-slate-500">
+            [9] Du, Y., Yang, M., Dai, B., Dai, H., Nachum, O., Tenenbaum, J.B., Schuurmans, D., Abbeel, P.: Learning
+            uni- versal policies via text-guided video generation. arXiv preprint arXiv:2302.00111 (2023)
+          </p>
+          <p class="text-slate-500">
+            [10] Fang, H.S., Fang, H., Tang, Z., Liu, J., Wang, J., Zhu, H., Lu, C.: Rh20t: A robotic dataset for
+            learning diverse skills in one-shot. arXiv preprint arXiv:2307.00595 (2023)
+          </p>
+          <p class="text-slate-500">
+            [11] Fang, H., Fang, H.S., Wang, Y., Ren, J., Chen, J., Zhang, R., Wang, W., Lu, C.: Airexo: Low-cost
+            exoskeletons for learning whole-arm manipulation in the wild. arXiv preprint arXiv:2309.14975 (2023)
+          </p>
+          <p class="text-slate-500">
+            [12] Fu, Z., Zhao, T.Z., Finn, C.: Mobile aloha: Learning bimanual mobile manipulation with low-cost
+            wholebody teleoperation. In: arXiv (2024)
+          </p>
+          <p class="text-slate-500">
+            [13] Girdhar, R., El-Nouby, A., Liu, Z., Singh, M., Alwala, K.V., Joulin, A., Misra, I.: Imagebind: One
+            embedding space to bind them all. In: Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern
+            Recognition. pp. 15180–15190 (2023)
+          </p>
+          <p class="text-slate-500">
+            [14] Lab, P.Y., etc., T.A.: Open-sora-plan (Apr 2024). https://doi.org/10.5281/zenodo.10948109, https:
+            //doi.org/10.5281/zenodo.10948109
+          </p>
+          <p class="text-slate-500">
+            [15] Lai, B., Dai, X., Chen, L., Pang, G., Rehg, J.M., Liu, M.: Lego: Learning egocentric action frame
+            generation via visual instruction tuning. arXiv preprint arXiv:2312.03849 (2023)
+          </p>
+          <p class="text-slate-500">
+            [16] Lifshitz, S., Paster, K., Chan, H., Ba, J., McIlraith, S.: Steve-1: A generative model for
+            text-to-behavior in minecraft. arXiv preprint arXiv:2306.00937 (2023)
+          </p>
+          <p class="text-slate-500">
+            [17] Liu, H., Li, C., Li, Y., Lee, Y.J.: Improved baselines with visual instruction tuning (2023)
+          </p>
+          <p class="text-slate-500">
+            [18] OpenAI: Gpt-4v(ision) system card (2023), https://openai.com/research/ gpt-4v-system-card
+          </p>
+          <p class="text-slate-500">
+            [19] Qin, Y., Zhou, E., Liu, Q., Yin, Z., Sheng, L., Zhang, R., Qiao, Y., Shao, J.: Mp5: A multi-modal
+            openended embodied system in minecraft via active perception. arXiv preprint arXiv:2312.07472 (2023)
+          </p>
+          <p class="text-slate-500">
+            [20] Radford, A., Kim, J.W., Hallacy, C., Ramesh, A., Goh, G., Agarwal, S., Sastry, G., Askell, A., Mishkin,
+            P., Clark, J., et al.: Learning transferable visual models from natural language supervision. In:
+            International conference on machine learning. pp. 8748–8763. PMLR (2021)
+          </p>
+          <p class="text-slate-500">
+            [21] Rombach, R., Blattmann, A., Lorenz, D., Esser, P., Ommer, B.: High-resolution image synthesis with
+            latent diffusion models. In: Proceedings of the IEEE/CVF conference on computer vision and pattern
+            recognition. pp. 10684–10695 (2022)
+          </p>
+          <p class="text-slate-500">
+            [22] Team, G., Anil, R., Borgeaud, S., Wu, Y., Alayrac, J.B., Yu, J., Soricut, R., Schalkwyk, J., Dai, A.M.,
+            Hauth, A., Millican, K., Silver, D., Petrov, S., Johnson, M., Antonoglou, I., Schrittwieser, J., Glaese, A.,
+            Chen, J., Pitler, E., Lillicrap, T., Lazaridou, A., Firat, O., Molloy, J., Isard, M., Barham, P.R.,
+            Hennigan, T., Lee, B., Viola, F., Reynolds, M., Xu, Y., Doherty, R., Collins, E., Meyer, C., Rutherford, E.,
+            Moreira, E., Ayoub, K., Goel, M., Tucker, G., Piqueras, E., Krikun, M., Barr, I., Savinov, N., Danihelka,
+            I., Roelofs, B., White, A., Andreassen, A., von Glehn, T., Yagati, L., Kazemi, M., Gonzalez, L., Khalman,
+            M., Sygnowski, J., Frechette, A., Smith, C., Culp, L., Proleev, L., Luan, Y., Chen, X., Lottes, J.,
+            Schucher, N., Lebron, F., Rrustemi, A., Clay, N., Crone, P., Kocisky, T., Zhao, J., Perz, B., Yu, D.,
+            Howard, H., Bloniarz, A., Rae, J.W., Lu, H., Sifre, L., Maggioni, M., Alcober, F., Garrette, D., Barnes, M.,
+            Thakoor, S., Austin, J., Barth-Maron, G., Wong, W., Joshi, R., Chaabouni, R., Fatiha, D., Ahuja, A., Liu,
+            R., Li, Y., Cogan, S., Chen, J., Jia, C., Gu, C., Zhang, Q., Grimstad, J., Hartman, A.J., Chadwick, M.,
+            Tomar, G.S., Garcia, X., Senter, E., Taropa, E., Pillai, T.S., Devlin, J., Laskin, M., de Las Casas, D.,
+            Valter, D., Tao, C., Blanco, L., Badia, A.P., Reitter, D., Chen, M., Brennan, J., Rivera, C., Brin, S.,
+            Iqbal, S., Surita, G., Labanowski, J., Rao, A., Winkler, S., Parisotto, E., Gu, Y., Olszewska, K., Zhang,
+            Y., Addanki, R., Miech, A., Louis, A., Shafey, L.E., Teplyashin, D., Brown, G., Catt, E., Attaluri, N.,
+            Balaguer, J., Xiang, J., Wang, P., Ashwood, Z., Briukhov, A., Webson, A., Ganapathy, S., Sanghavi, S.,
+            Kannan, A., Chang, M.W., Stjerngren, A., Djolonga, J., Sun, Y., Bapna, A., Aitchison, M., Pejman, P.,
+            Michalewski, H., Yu, T., Wang, C., Love, J., Ahn, J., Bloxwich, D., Han, K., Humphreys, P., Sellam, T.,
+            Bradbury, J., Godbole, V., Samangooei, S., Damoc, B., Kaskasoli, A., Arnold, S.M.R., Vasudevan, V., Agrawal,
+            S., Riesa, J., Lepikhin, D., Tanburn, R., Srinivasan, S., Lim, H., Hodkinson, S., Shyam, P., Fer- ret, J.,
+            Hand, S., Garg, A., Paine, T.L., Li, J., Li, Y., Giang, M., Neitz, A., Abbas, Z., York, S., Reid, M., Cole,
+            E., Chowdhery, A., Das, D., Rogozi ́nska, D., Nikolaev, V., Sprechmann, P., Nado, Z., Zilka, L., Prost, F.,
+            He, L., Monteiro, M., Mishra, G., Welty, C., Newlan, J., Jia, D., Allamanis, M., Hu, C.H., de Liedekerke,
+            R., Gilmer, J., Saroufim, C., Rijhwani, S., Hou, S., Shrivastava, D., Baddepudi, A., Goldin, A., Ozturel,
+            A., Cassirer, A., Xu, Y., Sohn, D., Sachan, D., Amplayo, R.K., Swanson, C., Petrova, D., Narayan, S., Guez,
+            A.,Brahma, S., Landon, J., Patel, M., Zhao, R., Villela, K., Wang, L., Jia, W., Rahtz, M., Gim ́enez, M.,
+            Yeung, L., Lin, H., Keeling, J., Georgiev, P., Mincu, D., Wu, B., Haykal, S., Saputro, R., Vodrahalli, K.,
+            Qin, J., Cankara, Z., Sharma, A., Fernando, N., Hawkins, W., Neyshabur, B., Kim, S., Hutter, A., Agrawal,
+            P., Castro-Ros, A., van den Driessche, G., Wang, T., Yang, F., yiin Chang, S., Komarek, P., McIlroy, R., Lu
+            ˇci ́c, M., Zhang, G., Farhan, W., Sharman, M., Natsev, P., Michel, P., Cheng, Y., Bansal, Y., Qiao, S., Cao,
+            K., Shakeri, S., Butterfield, C., Chung, J., Rubenstein, P.K., Agrawal, S., Mensch, A., Soparkar, K., Lenc,
+            K., Chung, T., Pope, A., Maggiore, L., Kay, J., Jhakra, P., Wang, S., Maynez, J., Phuong, M., Tobin, T.,
+            Tacchetti, A., Trebacz, M., Robinson, K., Katariya, Y., Riedel, S., Bailey, P., Xiao, K., Ghelani, N.,
+            Aroyo, L., Slone, A., Houlsby, N., Xiong, X., Yang, Z., Gribovskaya, E., Adler, J., Wirth, M., Lee, L., Li,
+            M., Kagohara, T., Pavagadhi, J., Bridgers, S., Bortsova, A., Ghemawat, S., Ahmed, Z., Liu, T., Powell, R.,
+            Bolina, V., Iinuma, M., Zablotskaia, P., Besley, J., Chung, D.W., Dozat, T., Comanescu, R., Si, X., Greer,
+            J., Su, G., Polacek, M., Kaufman, R.L., Tokumine, S., Hu, H., Buchatskaya, E., Miao, Y., Elhawaty, M.,
+            Siddhant, A., Tomasev, N., Xing, J., Greer, C., Miller, H., Ashraf, S., Roy, A., Zhang, Z., Ma, A., Filos,
+            A., Besta, M., Blevins, R., Klimenko, T., Yeh, C.K., Changpinyo, S., Mu, J., Chang, O., Pajarskas, M., Muir,
+            C., Cohen, V., Lan, C.L., Haridasan, K., Marathe, A., Hansen, S., Douglas, S., Samuel, R., Wang, M., Austin,
+            S., Lan, C., Jiang, J., Chiu, J., Lorenzo, J.A., Sj ̈osund, L.L., Cevey, S., Gleicher, Z., Avrahami, T.,
+            Boral, A., Srinivasan, H., Selo, V., May, R., Aisopos, K., Hussenot, L., Soares, L.B., Baumli, K., Chang,
+            M.B., Recasens, A., Caine, B., Pritzel, A., Pavetic, F., Pardo, F., Gergely, A., Frye, J., Ramasesh, V.,
+            Horgan, D., Badola, K., Kassner, N., Roy, S., Dyer, E., Campos, V., Tomala, A., Tang, Y., Badawy, D.E.,
+            White, E., Mustafa, B., Lang, O., Jindal, A., Vikram, S., Gong, Z., Caelles, S., Hemsley, R., Thornton, G.,
+            Feng, F., Stokowiec, W., Zheng, C., Thacker, P., C ̧ a ̆glar ̈Unl ̈u, Zhang, Z., Saleh, M., Svensson, J.,
+            Bileschi, M., Patil, P., Anand, A., Ring, R., Tsihlas, K., Vezer, A., Selvi, M., Shevlane, T., Rodriguez,
+            M., Kwiatkowski, T., Daruki, S., Rong, K., Dafoe, A., FitzGerald, N., Gu-Lemberg, K., Khan, M., Hendricks,
+            L.A., Pellat, M., Feinberg, V., CobonKerr, J., Sainath, T., Rauh, M., Hashemi, S.H., Ives, R., Hasson, Y.,
+            Li, Y., Noland, E., Cao, Y., Byrd, N., Hou, L., Wang, Q., Sottiaux, T., Paganini, M., Lespiau, J.B.,
+            Moufarek, A., Hassan, S., Shivakumar, K., van Amersfoort, J., Mandhane, A., Joshi, P., Goyal, A., Tung, M.,
+            Brock, A., Sheahan, H., Misra, V., Li, C., Raki ́cevi ́c, N., Dehghani, M., Liu, F., Mittal, S., Oh, J.,
+            Noury, S., Sezener, E., Huot, F., Lamm, M., Cao, N.D., Chen, C., Elsayed, G., Chi, E., Mahdieh, M., Tenney,
+            I., Hua, N., Petrychenko, I., Kane, P., Scandinaro, D., Jain, R., Uesato, J., Datta, R., Sadovsky, A.,
+            Bunyan, O., Rabiej, D., Wu, S., Zhang, J., Vasudevan, G., Leurent, E., Alnahlawi, M., Georgescu, I., Wei,
+            N., Zheng, I., Chan, B., Rabinovitch, P.G., Stanczyk, P., Zhang, Y., Steiner, D., Naskar, S., Azzam, M.,
+            Johnson, M., Paszke, A., Chiu, C.C., Elias, J.S., Mohiuddin, A., Muhammad, F., Miao, J., Lee, A., Vieillard,
+            N., Potluri, S., Park, J., Davoodi, E., Zhang, J., Stanway, J., Garmon, D., Karmarkar, A., Dong, Z., Lee,
+            J., Kumar, A., Zhou, L., Evens, J., Isaac, W., Chen, Z., Jia, J., Levskaya, A., Zhu, Z., Gorgolewski, C.,
+            Grabowski, P., Mao, Y., Magni, A., Yao, K., Snaider, J., Casagrande, N., Suganthan, P., Palmer, E., Irving,
+            G., Loper, E., Faruqui, M., Arkatkar, I., Chen, N., Shafran, I., Fink, M., Casta ̃no, A., Giannoumis, I.,
+            Kim, W., Rybi ́nski, M., Sreevatsa, A., Prendki, J., Soergel, D., Goedeckemeyer, A., Gierke, W., Jafari, M.,
+            Gaba, M., Wiesner, J., Wright, D.G., Wei, Y., Vashisht, H., Kulizhskaya, Y., Hoover, J., Le, M., Li, L.,
+            Iwuanyanwu, C., Liu, L., Ramirez, K., Khorlin, A., Cui, A., LIN, T., Georgiev, M., Wu, M., Aguilar, R.,
+            Pallo, K., Chakladar, A., Repina, A., Wu, X., van der Weide, T., Ponnapalli, P., Kaplan, C., Simsa, J., Li,
+            S., Dousse, O., Yang, F., Piper, J., Ie, N., Lui, M., Pasumarthi, R., Lintz, N., Vijayakumar, A., Thiet,
+            L.N., Andor, D., Valenzuela, P., Paduraru, C., Peng, D., Lee, K., Zhang, S., Greene, S., Nguyen, D.D.,
+            Kurylowicz, P., Velury, S., Krause, S., Hardin, C., Dixon, L., Janzer, L., Choo, K., Feng, Z., Zhang, B.,
+            Singhal, A., Latkar, T., Zhang, M., Le, Q., Abellan, E.A., Du, D., McKinnon, D., Antropova, N., Bolukbasi,
+            T., Keller, O., Reid, D., Finchelstein, D., Raad, M.A., Crocker, R., Hawkins, P., Dadashi, R., Gaffney, C.,
+            Lall, S., Franko, K., Filonov, E., Bulanova, A., Leblond, R., Yadav, V., Chung, S., Askham, H., Cobo, L.C.,
+            Xu, K., Fischer, F., Xu, J., Sorokin, C., Alberti, C., Lin, C.C., Evans, C., Zhou, H., Dimitriev, A.,
+            Forbes, H., Banarse, D., Tung, Z., Liu, J., Omernick, M., Bishop, C., Kumar, C., Sterneck, R., Foley, R.,
+            Jain, R., Mishra, S., Xia, J., Bos, T., Cideron, G., Amid, E., Piccinno, F., Wang, X., Banzal, P., Gurita,
+            P., Noga, H., Shah, P., Mankowitz, D.J., Polozov, A., Kushman, N., Krakovna, V., Brown, S., Bateni, M.,
+            Duan, D., Firoiu, V., Thotakuri, M., Natan, T., Mohananey, A., Geist, M., Mudgal, S., Girgin, S., Li, H.,
+            Ye, J., Roval, O., Tojo, R., Kwong, M., Lee-Thorp, J., Yew, C., Yuan, Q., Bagri, S., Sinopalnikov, D.,
+            Ramos, S., Mellor, J., Sharma, A., Severyn, A., Lai, J., Wu, K., Cheng, H.T., Miller, D., Sonnerat, N.,
+            Vnukov, D., Greig, R., Beattie, J., Caveness, E., Bai, L., Eisenschlos, J., Korchemniy, A., Tsai, T.,
+            Jasarevic, M., Kong, W., Dao, P., Zheng, Z., Liu, F., Yang, F., Zhu, R., Geller, M., Teh, T.H., Sanmiya, J.,
+            Gladchenko,E., Trdin, N., Sozanschi, A., Toyama, D., Rosen, E., Tavakkol, S., Xue, L., Elkind, C., Woodman,
+            O., Carpenter, J., Papamakarios, G., Kemp, R., Kafle, S., Grunina, T., Sinha, R., Talbert, A., Goyal, A.,
+            Wu, D., Owusu-Afriyie, D., Du, C., Thornton, C., Pont-Tuset, J., Narayana, P., Li, J., Fatehi, S., Wieting,
+            J., Ajmeri, O., Uria, B., Zhu, T., Ko, Y., Knight, L., H ́eliou, A., Niu, N., Gu, S., Pang, C., Tran, D., Li,
+            Y., Levine, N., Stolovich, A., Kalb, N., Santamaria-Fernandez, R., Goenka, S., Yustalim, W., Strudel, R.,
+            Elqursh, A., Lakshminarayanan, B., Deck, C., Upadhyay, S., Lee, H., Dusenberry, M., Li, Z., Wang, X., Levin,
+            K., Hoffmann, R., Holtmann-Rice, D., Bachem, O., Yue, S., Arora, S., Malmi, E., Mirylenka, D., Tan, Q., Koh,
+            C., Yeganeh, S.H., P ̃oder, S., Zheng, S., Pongetti, F., Tariq, M., Sun, Y., Ionita, L., Seyedhosseini, M.,
+            Tafti, P., Kotikalapudi, R., Liu, Z., Gulati, A., Liu, J., Ye, X., Chrzaszcz, B., Wang, L., Sethi, N., Li,
+            T., Brown, B., Singh, S., Fan, W., Parisi, A., Stanton, J., Kuang, C., Koverkathu, V., Choquette-Choo, C.A.,
+            Li, Y., Lu, T., Ittycheriah, A., Shroff, P., Sun, P., Varadarajan, M., Bahargam, S., Willoughby, R., Gaddy,
+            D., Dasgupta, I., Desjardins, G., Cornero, M., Robenek, B., Mittal, B., Albrecht, B., Shenoy, A., Moiseev,
+            F., Jacobsson, H., Ghaffarkhah, A., Rivi `ere, M., Walton, A., Crepy, C., Parrish, A., Liu, Y., Zhou, Z.,
+            Farabet, C., Radebaugh, C., Srinivasan, P., van der Salm, C., Fidjeland, A., Scellato, S., Latorre-Chimoto,
+            E., Klimczak-Pluci ́nska, H., Bridson, D., de Cesare, D., Hudson, T., Mendolicchio, P., Walker, L., Morris,
+            A., Penchev, I., Mauger, M., Guseynov, A., Reid, A., Odoom, S., Loher, L., Cotruta, V., Yenugula, M., Grewe,
+            D., Petrushkina, A., Duerig, T., Sanchez, A., Yadlowsky, S., Shen, A., Globerson, A., Kurzrok, A., Webb, L.,
+            Dua, S., Li, D., Lahoti, P., Bhupatiraju, S., Hurt, D., Qureshi, H., Agarwal, A., Shani, T., Eyal, M.,
+            Khare, A., Belle, S.R., Wang, L., Tekur, C., Kale, M.S., Wei, J., Sang, R., Saeta, B., Liechty, T., Sun, Y.,
+            Zhao, Y., Lee, S., Nayak, P., Fritz, D., Vuyyuru, M.R., Aslanides, J., Vyas, N., Wicke, M., Ma, X., Bilal,
+            T., Eltyshev, E., Balle, D., Martin, N., Cate, H., Manyika, J., Amiri, K., Kim, Y., Xiong, X., Kang, K.,
+            Luisier, F., Tripuraneni, N., Madras, D., Guo, M., Waters, A., Wang, O., Ainslie, J., Baldridge, J., Zhang,
+            H., Pruthi, G., Bauer, J., Yang, F., Mansour, R., Gelman, J., Xu, Y., Polovets, G., Liu, J., Cai, H., Chen,
+            W., Sheng, X., Xue, E., Ozair, S., Yu, A., Angermueller, C., Li, X., Wang, W., Wiesinger, J., Koukoumidis,
+            E., Tian, Y., Iyer, A., Gurumurthy, M., Goldenson, M., Shah, P., Blake, M., Yu, H., Urbanowicz, A.,
+            Palomaki, J., Fernando, C., Brooks, K., Durden, K., Mehta, H., Momchev, N., Rahimtoroghi, E., Georgaki, M.,
+            Raul, A., Ruder, S., Redshaw, M., Lee, J., Jalan, K., Li, D., Perng, G., Hechtman, B., Schuh, P., Nasr, M.,
+            Chen, M., Milan, K., Mikulik, V., Strohman, T., Franco, J., Green, T., Hassabis, D., Kavukcuoglu, K., Dean,
+            J., Vinyals, O.: Gemini: A family of highly capable multimodal models (2023)
+          </p>
+          <p class="text-slate-500">
+            [23] Wang, G., Xie, Y., Jiang, Y., Mandlekar, A., Xiao, C., Zhu, Y., Fan, L., Anandkumar, A.: Voyager: An
+            openended embodied agent with large language models. arXiv preprint arXiv:2305.16291 (2023)
+          </p>
+          <p class="text-slate-500">
+            [24] Yang, M., Du, Y., Ghasemipour, K., Tompson, J., Kaelbling, L., Schuurmans, D., Abbeel, P.: Learning
+            inter- active real-world simulators (2024)
+          </p>
+          <p class="text-slate-500">
+            [25] Yang, M., Du, Y., Ghasemipour, K., Tompson, J., Kaelbling, L., Schuurmans, D., Abbeel, P.: Learning
+            inter- active real-world simulators (2024)
+          </p>
+          <p class="text-slate-500">
+            [26] Yin, Z., Wang, J., Cao, J., Shi, Z., Liu, D., Li, M., Sheng, L., Bai, L., Huang, X., Wang, Z., et al.:
+            Lamm: Language-assisted multi-modal instructiontuning dataset, framework, and benchmark. arXiv preprint
+            arXiv:2306.06687 (2023)
+          </p>
+          <p class="text-slate-500">
+            [27] Zhou, E., Qin, Y., Yin, Z., Huang, Y., Zhang, R., Sheng, L., Qiao, Y., Shao, J.: Mine- dreamer:
+            Learning to follow instructions via chain- of-imagination for simulated-world control. arXiv preprint
+            arXiv:2403.12037 (2024)
+          </p>
+          <p class="text-slate-500">
+            [28] Zhu, D., Chen, J., Shen, X., Li, X., Elhoseiny, M.: Minigpt-4: Enhancing vision-language understanding
+            with advanced large language models. arXiv preprint arXiv:2304.10592 (2023)
+          </p>
+        </div>
+
+        <div class="flex justify-center mt-8"><Button id="toggleButton" class="cursor-pointer"> Expand </Button></div>
+      </div>
+    </Fragment>
+  </Content>
+  <script>
+    const button = document.getElementById('toggleButton');
+    const content = document.getElementById('content');
+    let isOpen = false;
+    if (button && content) {
+      button.addEventListener('click', () => {
+        if (!isOpen) {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          button.textContent = 'Collapse';
+          isOpen = true;
+        } else {
+          content.style.maxHeight = '';
+          button.textContent = 'Expand';
+          isOpen = false;
+        }
+      });
+    }
+  </script>
 </Layout>
